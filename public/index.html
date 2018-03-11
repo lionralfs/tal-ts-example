@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .videoplayer {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* .focus {
+      outline: 2px solid red;
+    } */
+
+    video {
+      background: #000;
+    }
+  </style>
+  <link rel='stylesheet' href='base.css' />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    const antie = {
+      framework: {
+        deviceConfiguration: {
+          pageStrategy: 'html5',
+          modules: {
+            base: '../devices/browserdevice',
+            modifiers: []
+          },
+          logging: {
+            level: 'none'
+          },
+          streaming: {
+            video: {
+              mediaURIFormat: '%href%',
+              supported: [
+                {
+                  protocols: ['http'],
+                  encodings: ['h264'],
+                  transferFormat: ['hls', 'plain'],
+                  maximumBitRate: 3600,
+                  maximumVideoLines: 1080
+                }
+              ]
+            },
+            audio: {
+              mediaURIFormat: '%href%',
+              supported: [
+                {
+                  protocols: ['http'],
+                  encodings: ['aac'],
+                  maximumBitRate: 192
+                }
+              ]
+            }
+          },
+          input: {
+            map: {
+              '13': 'ENTER',
+              '37': 'LEFT',
+              '38': 'UP',
+              '39': 'RIGHT',
+              '40': 'DOWN',
+              '112': 'SUBTITLE',
+              '113': 'PLAY',
+              '415': 'PLAY',
+              '114': 'PLAY_PAUSE',
+              '19': 'PLAY_PAUSE',
+              '402': 'PLAY_PAUSE',
+              '115': 'STOP',
+              '413': 'STOP',
+              '116': 'FAST_FWD',
+              '417': 'FAST_FWD',
+              '117': 'REWIND',
+              '412': 'REWIND',
+              '166': 'BACK',
+              '8': 'BACK',
+              '20': 'INFO'
+            }
+          },
+          accessibility: {
+            captions: {
+              supported: ['application/ttaf+xml']
+            }
+          },
+          layouts: [],
+          networking: {
+            supportsJSONP: true
+          },
+          capabilities: [],
+          statLabels: {}
+        }
+      }
+    };
+  </script>
+
+  <script src="./dist/main.js"></script>
+</body>
+
+</html>
