@@ -7,7 +7,7 @@ import {
   HorizontalList,
   RuntimeContext,
   MediaPlayer
-} from 'tal-ts';
+} from '../../../tal-ts';
 
 export class SimpleVideoComponent extends Component {
   constructor() {

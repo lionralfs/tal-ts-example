@@ -8,7 +8,7 @@ import {
   ActivateFirstHandler,
   VerticalList,
   DataSource
-} from 'tal-ts';
+} from '../../../tal-ts';
 import { SimpleFeed } from '../datasources/simplefeed';
 import { SimpleVideoComponent } from './simplevideocomponent';
 import { SimpleFormatter } from '../formatters/simpleformatter';

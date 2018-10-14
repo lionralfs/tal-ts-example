@@ -1,6 +1,6 @@
 // @ts-check
 
-import { Button, Formatter, Image, Label } from 'tal-ts';
+import { Button, Formatter, Image, Label } from '../../../tal-ts';
 
 export class SimpleFormatter extends Formatter {
   format(iterator) {

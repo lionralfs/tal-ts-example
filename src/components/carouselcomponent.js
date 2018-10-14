@@ -6,7 +6,7 @@ import {
   Carousel,
   ActivateFirstHandler,
   Binder
-} from 'tal-ts';
+} from '../../../tal-ts';
 
 export class CarouselComponent extends Component {
   constructor() {

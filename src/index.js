@@ -1,12 +1,14 @@
 // @ts-check
-import { Application, Container, Device } from 'tal-ts';
+import { Application, Container, Device } from '../../tal-ts';
+// import { WebkitDevice } from '../../tal-ts/dist/devices/webkit';
 import { SimplePage } from './components/simplepage';
 
 class SampleApp extends Application {
-  constructor(appDiv, styleDir, imgDir, readyHandler) {
-    super(appDiv, styleDir, imgDir, readyHandler);
+  constructor(appDiv, deviceConstructor, styleDir, imgDir, readyHandler) {
+    super(appDiv, deviceConstructor, styleDir, imgDir, readyHandler);
 
     this.appDiv = appDiv;
+
     this.setRootContainer = () => {
       const container = new Container();
       container.outputElement = appDiv;
@@ -19,7 +21,7 @@ class SampleApp extends Application {
     this.setRootContainer();
 
     // Launch our custom 'page' component
-    this.addComponentContainer('maincontainer', new SimplePage());
+    // this.addComponentContainer('maincontainer', new SimplePage());
   }
 
   route() {
@@ -28,4 +30,11 @@ class SampleApp extends Application {
 }
 
 const rootEl = document.getElementById('root');
-const test = new SampleApp(rootEl, '', '', () => console.log('app is ready'));
+
+import('../../tal-ts/dist/devices/webkit' /* webpackChunkName: "webkit-device" */)
+  .then(({ WebkitDevice }) => {
+    const test = new SampleApp(rootEl, WebkitDevice, '', '', () => {
+      console.log('app is ready');
+    });
+  })
+  .catch(console.error);
