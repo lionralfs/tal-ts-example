@@ -12,8 +12,8 @@
   "author": "Lion Ralfs <lion.ralfs@hotmail.com> (https://github.com/lionralfs)",
   "license": "MIT",
   "devDependencies": {
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "tal-ts": "^0.3.0"
